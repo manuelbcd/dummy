@@ -1,6 +1,7 @@
 name: Sysdig - Build, scan, push and upload sarif report
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - '*'
@@ -24,9 +25,9 @@ jobs:
         # Tag of the image to analyse
         image-tag: "$GITHUB_REF:latest"
         # API token for Sysdig Scanning auth
-        sysdig-secure-token: ${{ secrets.KUBELAB_SECURE_API_TOKEN }}
+        sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN}}
         # Sysdig secure endpoint. Please read: https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/
-        sysdig-secure-url: https://us2.app.sysdig.com/internal/scanning/scanning-analysis-collector
+        sysdig-secure-url: https://us2.app.sysdig.com
         dockerfile-path: ./Dockerfile
         input-type: docker-daemon
         ignore-failed-scan: true
