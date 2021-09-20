@@ -30,6 +30,9 @@ jobs:
         # API token for Sysdig Scanning auth
         sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN}}
         # Sysdig secure endpoint. Please read: https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/
+        # US-East https://secure.sysdig.com
+        # US-West https://us2.app.sysdig.com
+        # EU      https://eu1.app.sysdig.com 
         sysdig-secure-url: https://us2.app.sysdig.com
         dockerfile-path: ./Dockerfile
         input-type: docker-daemon
